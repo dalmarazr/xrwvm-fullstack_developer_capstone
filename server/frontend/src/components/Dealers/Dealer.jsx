@@ -28,10 +28,13 @@ const Dealer = () => {
     const res = await fetch(dealer_url, {
       method: "GET"
     });
+    console.log("🚀 ~ constget_dealer= ~ dealer_url:", dealer_url)
     const retobj = await res.json();
+    console.log("🚀 ~ constget_dealer= ~ retobj:", retobj)
     
     if(retobj.status === 200) {
-      let dealerobjs = Array.from(retobj.dealer)
+      let dealerobjs = [retobj.dealer]
+      console.log("🚀 ~ constget_dealer= ~ dealerobjs:", dealerobjs)
       setDealer(dealerobjs[0])
     }
   }
